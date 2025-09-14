@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Som de abertura (placeholder)
     function playOpenSound() {
         // Aqui poderia ser adicionado um som de abertura
-        // const audio = new Audio('path/to/opening-sound.mp3');
-        // audio.play();
+        const audio = new Audio('https://www.epidemicsound.com/sound-effects/tracks/d6ae1ed7-0930-4bcc-b4d0-f7930e5cb54a/');
+        audio.play();
         console.log('🎵 Som de abertura do convite!');
     }
     
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
             form.reset();
             
             // Adicionar confetes se confirmou presença
-            if (attendanceRadio.value === 'sim') {
+            if (attendanceRadio.value === 'Aceito') {
                 createConfetti();
                 createFireworks();
             }
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Criar confetes
     function createConfetti() {
         const colors = ['#3b82f6', '#fbbf24', '#10b981', '#f59e0b', '#8b5cf6'];
-        const confettiCount = 60;
+        const confettiCount = 120;
         
         for (let i = 0; i < confettiCount; i++) {
             setTimeout(() => {
@@ -419,8 +419,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 setTimeout(() => {
                     confetti.remove();
-                }, 4000);
-            }, i * 50);
+                }, 10000);
+            }, i * 100);
         }
     }
     
