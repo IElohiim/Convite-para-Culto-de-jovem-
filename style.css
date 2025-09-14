@@ -20,6 +20,7 @@ body {
     height: 100%;
     background: 
         radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(30, 64, 175, 0.2) 0%, transparent 50%);
     animation: backgroundPulse 8s ease-in-out infinite;
     z-index: -1;
@@ -765,69 +766,109 @@ body {
     }
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ===== RESPONSIVIDADE MOBILE ===== */
 @media (max-width: 768px) {
+    /* Convite fechado - Tablet */
     .invitation-envelope {
-        width: 280px;
-        height: 200px;
+        width: 300px;
+        height: 210px;
+    }
+    
+    .envelope-flap {
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        border-top: 70px solid #fbbf24;
+    }
+    
+    .envelope-seal {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+    }
+    
+    .seal-logo {
+        width: 45px;
+        height: 45px;
     }
     
     .envelope-text h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
     
     .envelope-text p {
         font-size: 1rem;
     }
     
-    .click-instruction p {
-        font-size: 1rem;
+    .envelope-decoration {
+        width: 60px;
     }
     
+    /* Instrução de clique - Tablet */
+    .click-instruction {
+        bottom: 80px;
+    }
+    
+    .click-instruction p {
+        font-size: 1.1rem;
+    }
+    
+    .click-arrow {
+        font-size: 1.8rem;
+    }
+    
+    /* Conteúdo principal - Tablet */
     .container {
         padding: 15px;
     }
     
     .main-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .event-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .invitation-card {
-        padding: 25px;
+        padding: 30px;
     }
     
     .form-container {
-        padding: 20px;
+        padding: 25px;
     }
     
     .detail-item {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
     }
     
     .detail-icon {
         margin-right: 0;
         margin-bottom: 10px;
+        font-size: 2rem;
+    }
+    
+    .detail-text {
+        font-size: 1.1rem;
+    }
+    
+    .logo {
+        width: 100px;
     }
 }
 
 @media (max-width: 480px) {
+    /* Convite fechado - Mobile */
     .invitation-envelope {
-        width: 250px;
-        height: 180px;
+        width: 280px;
+        height: 190px;
     }
     
-    .envelope-text h2 {
-        font-size: 1.2rem;
-    }
-    
-    .seal-logo {
-        width: 40px;
-        height: 40px;
+    .envelope-flap {
+        border-left: 140px solid transparent;
+        border-right: 140px solid transparent;
+        border-top: 60px solid #fbbf24;
     }
     
     .envelope-seal {
@@ -836,19 +877,238 @@ body {
         top: -30px;
     }
     
+    .seal-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .envelope-text h2 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+    
+    .envelope-text p {
+        font-size: 0.9rem;
+    }
+    
+    .envelope-decoration {
+        width: 50px;
+        margin-top: 10px;
+    }
+    
+    /* Instrução de clique - Mobile */
+    .click-instruction {
+        bottom: 60px;
+    }
+    
+    .click-instruction p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    .click-arrow {
+        font-size: 1.5rem;
+    }
+    
+    /* Conteúdo principal - Mobile */
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .event-title {
+        font-size: 1.6rem;
+    }
+    
+    .invitation-card {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .detail-item {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .detail-icon {
+        font-size: 1.8rem;
+    }
+    
+    .detail-text {
+        font-size: 1rem;
+    }
+    
+    .logo {
+        width: 80px;
+    }
+    
+    .input-group input {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .radio-option {
+        padding: 12px;
+    }
+    
+    .radio-text {
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .form-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 360px) {
+    /* Convite fechado - Mobile pequeno */
+    .invitation-envelope {
+        width: 260px;
+        height: 170px;
+    }
+    
+    .envelope-flap {
+        border-left: 130px solid transparent;
+        border-right: 130px solid transparent;
+        border-top: 55px solid #fbbf24;
+    }
+    
+    .envelope-seal {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+    }
+    
+    .seal-logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .envelope-text h2 {
+        font-size: 1.1rem;
+    }
+    
+    .envelope-text p {
+        font-size: 0.8rem;
+    }
+    
+    .envelope-decoration {
+        width: 40px;
+    }
+    
+    /* Instrução de clique - Mobile pequeno */
+    .click-instruction p {
+        font-size: 0.9rem;
+    }
+    
+    .click-arrow {
+        font-size: 1.3rem;
+    }
+    
+    /* Conteúdo principal - Mobile pequeno */
     .main-title {
         font-size: 1.5rem;
     }
     
     .event-title {
+        font-size: 1.4rem;
+    }
+    
+    .invitation-card {
+        padding: 15px;
+        margin: 5px;
+    }
+    
+    .form-container {
+        padding: 15px;
+    }
+    
+    .detail-item {
+        padding: 12px;
+    }
+    
+    .detail-icon {
         font-size: 1.5rem;
+    }
+    
+    .detail-text {
+        font-size: 0.9rem;
+    }
+    
+    .logo {
+        width: 70px;
+    }
+}
+
+/* ===== ANIMAÇÕES HOVER MOBILE ===== */
+@media (hover: none) and (pointer: coarse) {
+    /* Desabilitar hover em dispositivos touch */
+    .invitation-envelope:hover {
+        transform: translate(-50%, -50%) scale(1);
+        filter: none;
+    }
+    
+    .detail-item:hover {
+        transform: translateX(0);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: none;
+    }
+    
+    .radio-option:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateX(0);
+    }
+    
+    .submit-btn:hover {
+        transform: translateY(0);
+        box-shadow: none;
+        background: linear-gradient(135deg, #3b82f6, #1e40af);
+    }
+    
+    .close-btn:hover {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+    
+    .logo:hover {
+        transform: scale(1);
+    }
+}
+
+/* ===== ORIENTAÇÃO LANDSCAPE MOBILE ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .invitation-envelope {
+        width: 320px;
+        height: 220px;
+    }
+    
+    .click-instruction {
+        bottom: 40px;
+    }
+    
+    .container {
+        padding: 10px;
     }
     
     .invitation-card {
         padding: 20px;
     }
     
-    .logo {
-        width: 80px;
+    .detail-item {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .detail-icon {
+        margin-right: 15px;
+        margin-bottom: 0;
     }
 }
