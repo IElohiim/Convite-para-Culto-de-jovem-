@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite - Culto de Jovens | Igreja Elohim</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Convite especial para o Culto de Jovens na Igreja Elohim. Participe conosco de uma noite de louvor, adoração e comunhão.">
+    <meta name="author" content="Igreja Elohim">
+    <meta name="keywords" content="Convite, Culto de Jovens, Igreja Elohim, Louvor, Adoração, Comunhão, Evento Religioso">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    
+
+
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <!-- Convite Fechado - Estado Inicial -->
+    <div class="invitation-envelope" id="invitationEnvelope">
+        <div class="envelope-front">
+            <div class="envelope-text">
+                <h2>CONVITE ESPECIAL</h2>
+                <p>Igreja Elohim</p>
+                <div class="envelope-decoration"></div>
+            </div>
+        </div>
+        <div class="envelope-back"></div>
+        <div class="envelope-flap"></div>
+    </div>
+    
+    <!-- Texto de Instrução -->
+    <div class="click-instruction" id="clickInstruction">
+        <p>✨ Clique no convite para abrir ✨</p>
+        <div class="click-arrow">👆</div>
+    </div>
+    
+    <!-- Conteúdo Principal - Inicialmente Oculto -->
+    <div class="main-container" id="mainContainer">
+        <div class="container">
+            <header class="header">
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="Igreja Elohim" class="logo">
+                </div>
+                <h1 class="main-title">IGREJA ELOHIM</h1>
+                <p class="subtitle">O Senhor é Deus, no controle está</p>
+            </header>
+
+            <main class="main-content">
+                <div class="invitation-card">
+                    <div class="event-header">
+                        <h2 class="event-title">CULTO DE JOVENS</h2>
+                        <div class="event-decoration"></div>
+                    </div>
+
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">📅</div>
+                            <div class="detail-text">
+                                <strong>Data:</strong> 20 de Setembro
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">🕐</div>
+                            <div class="detail-text">
+                                <strong>Horário:</strong> 19:00h
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">📍</div>
+                            <div class="detail-text">
+                                <strong>Local:</strong> R. Benedito Carvalho, 765<br>
+                                Rio do Ouro
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-container">
+                        <h3 class="form-title">Confirme sua presença</h3>
+                        <form id="confirmationForm" class="confirmation-form" action="https://api.sheetmonkey.io/form/v6em8JwrLnGvpx2uih5AX3" method="post">
+                            <div class="input-group">
+                                <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                                <label for="name">Nome</label>
+                            </div>
+                            
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="attendance" value="Aceito" required>
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">✅ Sim, estarei presente!</span>
+                                </label>
+                                
+                                <label class="radio-option">
+                                    <input type="radio" name="attendance" value="Recusado" required>
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">❌ Não poderei comparecer</span>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn" value="Submit">
+                                
+                                <span class="btn-text">Confirmar Presença</span>
+                                <span class="btn-icon">🙏</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="success-modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">✨</div>
+            <h3>Presença Confirmada!</h3>
+            <p id="confirmationMessage"></p>
+            <button onclick="closeModal()" class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <div class="floating-elements">
+        <div class="floating-star"></div>
+        <div class="floating-star"></div>
+        <div class="floating-star"></div>
+        <div class="floating-star"></div>
+        <div class="floating-star"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+
+        const handleSubmit = (event) =>{
+            event.preventDefault();
+
+            fetch('https://api.sheetmonkey.io/form/v6em8JwrLnGvpx2uih5AX3', {
+                method: 'POST',
+                headers:{
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    Nome: document.getElementById('name').value,
+                    Presença: document.querySelector('input[name="attendance"]:checked').value
+                    }),
+                }) 
+            }
+        document.querySelector('form').addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>
